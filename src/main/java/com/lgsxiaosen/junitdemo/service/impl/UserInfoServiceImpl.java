@@ -1,16 +1,24 @@
 package com.lgsxiaosen.junitdemo.service.impl;
 
 import com.lgsxiaosen.junitdemo.dto.UserInfoDto;
+import com.lgsxiaosen.junitdemo.service.DbService;
 import com.lgsxiaosen.junitdemo.service.UserInfoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
- * @author liuguisen
+ * @author
  * @date 2020/11/25
  **/
+@Service
 public class UserInfoServiceImpl implements UserInfoService {
     private static final Logger logger = LoggerFactory.getLogger(UserInfoServiceImpl.class);
+
+    @Autowired
+    private DbService dbService;
+
 
     /**
      * 查询用户信息
@@ -19,8 +27,7 @@ public class UserInfoServiceImpl implements UserInfoService {
      */
     @Override
     public UserInfoDto getUserInfo(Integer id) {
-
-        return null;
+        return dbService.queryInfo(id);
     }
 
     /**
@@ -30,7 +37,6 @@ public class UserInfoServiceImpl implements UserInfoService {
      */
     @Override
     public UserInfoDto saveUser(UserInfoDto userInfoDto) {
-
-        return null;
+        return dbService.saveInfo(userInfoDto);
     }
 }

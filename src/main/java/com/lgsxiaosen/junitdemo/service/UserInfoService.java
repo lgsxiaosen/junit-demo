@@ -3,7 +3,7 @@ package com.lgsxiaosen.junitdemo.service;
 import com.lgsxiaosen.junitdemo.dto.UserInfoDto;
 
 /**
- * @author liuguisen
+ * @author
  * @date 2020/11/25
  **/
 public interface UserInfoService {
